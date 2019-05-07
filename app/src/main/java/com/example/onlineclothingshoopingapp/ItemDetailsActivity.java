@@ -1,15 +1,17 @@
 package com.example.onlineclothingshoopingapp;
 
+
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
 
+import de.hdodenhof.circleimageview.CircleImageView;
+
 public class ItemDetailsActivity extends AppCompatActivity {
     CircleImageView circleImg;
-    TextView tvName, tvPrice, tvDescription;
+    TextView tvName,tvPrice,tvDescription;
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void OnCreat(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_item_details);
 
@@ -20,11 +22,13 @@ public class ItemDetailsActivity extends AppCompatActivity {
 
         Bundle bundle = getIntent().getExtras();
 
-        if (bundle != null){
+        if (bundle != null) {
             circleImg.setImageResource(bundle.getInt("image"));
             tvName.setText("Name: "+bundle.getString("name"));
             tvPrice.setText("Price: "+bundle.getString("price"));
             tvDescription.setText(bundle.getString("description"));
         }
+
     }
+
 }
